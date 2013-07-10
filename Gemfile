@@ -3,6 +3,7 @@ source 'http://ruby.taobao.org'
 
 gem 'rails', '~> 3.2.13'
 
+gem 'mysql2'
 gem 'sqlite3'
 
 gem 'rails_kindeditor', '~> 0.3.20'
@@ -17,6 +18,9 @@ end
 
 gem 'jquery-rails'
 
+# 禁用assets log
+gem 'quiet_assets'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -26,8 +30,9 @@ gem 'jquery-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
+# 开发环境
+group :development do
+  gem 'capistrano'
+  gem 'pry'
+  gem 'pry-nav'
+end
