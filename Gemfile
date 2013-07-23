@@ -7,6 +7,7 @@ gem 'mysql2'
 gem 'sqlite3'
 
 gem 'rails_kindeditor', '~> 0.3.20'
+gem 'ancestry'
 gem 'acts_as_list'
 
 # Gems used only for assets and not required
