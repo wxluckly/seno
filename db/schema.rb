@@ -17,9 +17,8 @@ ActiveRecord::Schema.define(:version => 20130723152743) do
     t.string   "title"
     t.text     "content"
     t.integer  "category_id"
-    t.integer  "sub_category_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "position"
   end
 
@@ -31,12 +30,5 @@ ActiveRecord::Schema.define(:version => 20130723152743) do
   end
 
   add_index "categories", ["ancestry"], :name => "index_categories_on_ancestry"
-
-  create_table "sub_categories", :force => true do |t|
-    t.string   "name"
-    t.integer  "category_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
 
 end
