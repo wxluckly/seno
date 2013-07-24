@@ -1,4 +1,6 @@
 <% @articles.each do |article| %>
+  <%= article.category.try(:name) %>  
   <%= article.content %>
+  <%= h_time(article.created_at) %>
   <br/>
 <% end %>

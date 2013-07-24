@@ -1,16 +1,22 @@
 class ArticlesController < ApplicationController
 
   def index
-    @articles = Article.order("id desc")
+    @articles = Article.includes(:category).order("id desc")
   end
 
   def new
+    @categories = Category.all
     @article = Article.new()
   end
 
   def create
     @article = Article.create(params[:article])
-    redirect_to articles_path
+    if @article
+      redirect_to articles_path
+    else
+      @categories = Category.all
+      render action: "new"
+    end
   end
 
   def edit
