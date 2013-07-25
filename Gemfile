@@ -28,6 +28,7 @@ gem 'unicorn'
 
 # 开发环境
 group :development do
+  gem 'better_errors'
   gem 'capistrano'
   gem 'pry'
   gem 'pry-nav'
