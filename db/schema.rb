@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130723152743) do
+ActiveRecord::Schema.define(:version => 20130725033325) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -20,15 +20,20 @@ ActiveRecord::Schema.define(:version => 20130723152743) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "position"
+    t.string   "slug"
   end
+
+  add_index "articles", ["slug"], :name => "index_articles_on_slug", :unique => true
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "ancestry"
+    t.string   "slug"
   end
 
   add_index "categories", ["ancestry"], :name => "index_categories_on_ancestry"
+  add_index "categories", ["slug"], :name => "index_categories_on_slug", :unique => true
 
 end

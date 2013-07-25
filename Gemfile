@@ -11,9 +11,11 @@ gem 'jquery-rails'
 # tools
 gem 'ancestry'
 gem 'acts_as_list'
+gem 'chinese_pinyin'
+gem 'friendly_id'
+gem 'quiet_assets'
 gem 'rails_kindeditor', '~> 0.3.20'
 gem 'simple_form'
-gem 'quiet_assets'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

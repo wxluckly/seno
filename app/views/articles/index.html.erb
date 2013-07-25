@@ -1,6 +1,8 @@
 <% @articles.each do |article| %>
-  <%= article.category.try(:name) %>  
+  <%= link_to article.category.try(:name), article_path(article) %>
+  <%= article.title %>
   <%= article.content %>
   <%= h_time(article.created_at) %>
   <br/>
 <% end %>
+<%= link_to "new", new_article_path %>  
